@@ -1,0 +1,7 @@
+#Ignore codacy rules
+.codacy/
+.github/instructions/codacy.instructions.md
+
+.vscode/
+__pycache__/
+.env
