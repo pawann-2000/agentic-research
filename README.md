@@ -61,7 +61,7 @@ Follow these steps carefully:
 
 If you're using git:
 ```bash
-git clone <repository-url>
+git clone https://github.com/pawann-2000/agentic-research
 cd Agentic_RAG
 ```
 
@@ -79,7 +79,7 @@ This will install all the required Python packages. It might take a few minutes.
 
 ### Step 3: Configure Environment Variables
 
-1. Create a file named `.env` in the project root folder (if it doesn't exist)
+1. Create a file named `.env` in the project root folder (if it doesn't exist), just like `.env.example`.
 2. Open it with a text editor and add your API keys:
 
 ```
@@ -99,7 +99,7 @@ There are three ways to use this research assistant:
 This mode lets you ask multiple questions in a conversation style.
 
 ```bash
-python run.py
+uv run python run.py
 ```
 
 You'll see:
@@ -119,7 +119,7 @@ Type your question and press Enter. The system will research and provide an answ
 Ask a single question from the command line:
 
 ```bash
-python run.py --query "What are the latest developments in quantum computing?"
+uv run python run.py --query "What are the latest developments in quantum computing?"
 ```
 
 The system will answer your question and exit.
@@ -129,27 +129,12 @@ The system will answer your question and exit.
 See example questions and answers:
 
 ```bash
-python run.py --demo
+uv run python run.py --demo
 ```
 
 This will run three pre-configured demo queries to show you how the system works.
 
-### Option 4: Web API Mode
-
-Start a web server with a user-friendly interface:
-
-```bash
-python -m uvicorn src.api.app:app --reload --host 0.0.0.0 --port 8000
-```
-
-Then open your web browser and go to:
-- **Web interface**: http://localhost:8000
-- **API documentation**: http://localhost:8000/docs
-- **Health check**: http://localhost:8000/api/health
-
 ## Example Usage
-
-### Interactive Mode Example
 
 ```
 Your question: What is machine learning?
@@ -259,7 +244,7 @@ A workflow coordinates how agents work together. In this project:
 - Stop the other program using port 8000
 - Use a different port:
   ```bash
-  python -m uvicorn src.api.app:app --reload --port 8001
+  uv run python -m uvicorn src.api.app:app --reload --port 8001
   ```
 
 ### Problem: Slow responses
@@ -280,8 +265,10 @@ CEREBRAS_MODEL=llama3.3-70b
 ```
 
 Available models:
-- `llama3.3-70b` (default, best balance)
-- `llama3.1-8b` (faster but less capable)
+- `llama3.3-70b`
+- `llama3.1-8b`
+- `gpt-oss-120b`
+- `qwen-3-32b`
 
 ### Adjusting Agent Behavior
 
@@ -316,10 +303,6 @@ More results give more comprehensive answers but take longer.
 ### Understanding APIs
 - [What is a REST API?](https://www.redhat.com/en/topics/api/what-is-a-rest-api)
 - [FastAPI Documentation](https://fastapi.tiangolo.com/)
-
-## License
-
-MIT License - See LICENSE file for details
 
 ## Support
 
