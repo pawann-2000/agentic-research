@@ -62,7 +62,7 @@ Follow these steps carefully:
 If you're using git:
 ```bash
 git clone https://github.com/pawann-2000/agentic-research
-cd Agentic_RAG
+cd agentic-research
 ```
 
 Or download and extract the ZIP file, then navigate to the folder in your terminal.
@@ -171,7 +171,7 @@ curl -X POST "http://localhost:8000/api/research" \
 Here's what each folder contains:
 
 ```
-Agentic_RAG/
+agentic-research/
 ├── src/                          # Source code
 │   ├── agents/                   # AI agent definitions
 │   │   ├── research_agent.py    # Agent that searches for information
